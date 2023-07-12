@@ -1,0 +1,17 @@
+theme: {
+    colors: {
+      primaryLight: "#ffffff",
+      primaryDark: "#000000",
+      secondaryDark: "#c4ed0e",
+      secondaryLight: "#2641c2",
+      secondaryLight1: "#432432",
+      secondaryLight2: "#FA7C92",
+      secondaryDark2: "#068DA9",
+      royalBlue: "#4169e1",
+      goldShade1: "#e6be8a",
+      gradientColor1: "#adf7f2",
+      gradientColor2: "#15aaff",
+      darkBlue1: "#1402c8",
+      seruleanBlue: "#2641c2",
+      souptickBlue: "#19a7ce",
+    },
