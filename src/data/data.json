@@ -1,0 +1,42 @@
+{
+	"product": {
+		"id": 1,
+		"title": "Linkin Park",
+		"product-code": "XXXXX",
+		"rating": 4.69,
+		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices dui vitae lectus ultricies lobortis. Praesent ut vestibulum ante. Vestibulum odio erat, aliquet ac lectus vitae, lacinia interdum diam. Nam ut tincidunt erat, a vehicula nibh. Maecenas tempor placerat quam, sed laoreet lectus accumsan sit amet. In lectus magna, mollis vitae metus nec, laoreet iaculis diam. Nullam mattis elit dolor, ac convallis lorem scelerisque ac. Donec fermentum laoreet eleifend. Donec ornare sem sit amet dui cursus, vel auctor ante varius.",
+		"category": {
+			"name": "T-shirt",
+			"id": 1
+		},
+		"sub-catagory": {
+			"name": "band",
+			"id": 1
+		},
+		"images": ["#1", "#2", "#3", "#4"],
+		"stock-available": true,
+		"price": 500,
+		"discount-percentage": 50,
+		"offer-price": 250,
+		"size-available": [
+			{ "name": "M", "no-of-unit": 10 },
+			{ "name": "L", "no-of-unit": 12 }
+		],
+		"colours": [
+			{
+				"id": 1,
+				"name": "white",
+				"hex-code": "#fffff",
+				"no-of-unit": 10
+			}
+		],
+		"product-specs": {
+			"type": "Round NECK",
+			"sleeves": "Half Sleeves",
+			"fit": "Regular",
+			"gender": ["Men", "Women", "unisex"],
+			"fabric": "Pure COTTON",
+			"Pack of": "one"
+		}
+	}
+}

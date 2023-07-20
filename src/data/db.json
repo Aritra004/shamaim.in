@@ -1,0 +1,49 @@
+{
+	"status": "success",
+	"data": {
+		"products": [
+			{
+				"product_id": 2,
+				"product_title": "Cuban Collar Shirt",
+				"thumbnail_image": "http://127.0.0.1:8000/product_images/2.jpeg",
+				"product_description": "In modern times, a man needs at least one designr.",
+				"base_price": "854",
+				"discount_type": "flat",
+				"discount_price": "100",
+				"variant": [
+					{
+						"id": 1,
+						"color": "black",
+						"hex": "#FFFFFF",
+						"images": ["http://127.0.0.1:8000/product_images/2.jpeg"],
+						"Stock": [
+							{
+								"units": 100,
+								"size": "M"
+							}
+						]
+					},
+					{
+						"id": 2,
+						"color": "white",
+						"hex": "#000000",
+						"images": [
+							"http://127.0.0.1:8000/product_images/2.jpeg",
+							"http://127.0.0.1:8000/product_images/2.jpeg"
+						],
+						"Stock": [
+							{
+								"units": 100,
+								"size": "M"
+							},
+							{
+								"units": 100,
+								"size": "Xl"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
