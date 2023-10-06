@@ -1,35 +1,16 @@
-# Shamaim Web App
+Shamaim Front End
 
-## Tech In Use
-- Vite Js
-- React  Js
-- Tailwind CSS 
-- Node Js
-- Flowbite
-- Mantine
-- Material Ui
-- Redux Toolkit
-- React-Redux
-## Getting Started
+## Follow the 3 Steps and your good to go. 
 
-First, run the development server:
+1: Clone the Project 
 
-```bash
-npm install
-```
- or
-```bash
-yarn instll
-```
+2: simply run the command 
+   ### `npm install` 
+   First to install all the packages
+   
+3: run the project using 
+   ### `npm start`
+   
+   ---
 
-# Then
 
-```bash
-npm run dev
-```
- or
-```bash
-yarn dev
-```
-> Developed by
-**Shamaim Developers**
