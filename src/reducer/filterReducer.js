@@ -110,7 +110,7 @@ const filterReducer = (state, action) => {
 
       if (category !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
-          (curElem) => curElem.category === category
+          (curElem) => curElem.category.toLowerCase() === category.toLowerCase()
         );
       }
       if (Theme !== "all") {
@@ -132,10 +132,15 @@ const filterReducer = (state, action) => {
       }
       if (discount_price !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
-          (curElem) => curElem.discount_price === discount_price
+          (curElem) => curElem.discount_price.includes(discount_price)
         );
       }
-
+      // if (discount_price !== "all") {
+      //   tempFilterProduct = tempFilterProduct.filter(
+      //     (curElem) => curElem.discount_price <= discount_price
+      //   );
+      // }
+      
       if (price === 0) {
         tempFilterProduct = tempFilterProduct.filter(
           (curElem) => curElem.price === price

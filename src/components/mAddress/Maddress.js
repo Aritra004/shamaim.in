@@ -15,12 +15,24 @@ const Maddress = () => {
     setNewAddress('');
     setShowModal(false);
   };
+
+  const handleDeleteAddress = (index) => {
+    setAddresses((prevAddresses) => {
+      const updatedAddresses = [...prevAddresses];
+      updatedAddresses.splice(index, 1);
+      return updatedAddresses;
+    });
+  };
   return (
     <div className="ma-container">
-      <h1 className="ma-title">Manage Address Page</h1>
+      <h1 className="ma-title">Manage Address</h1>
       <h2 className="ma-sub">Current Address:</h2>
       {addresses.map((address, index) => (
-        <p key={index}>{address}</p>
+        <div className="ma-p">
+        <input type="radio" name="address" key={index} />
+        <label key={index}>{address}</label>
+        <button onClick={() => handleDeleteAddress(index)}>Delete</button>
+        </div>
       ))}
       <button onClick={handleAddAddress} className="ma-button">Add Address</button>
 

@@ -37,11 +37,11 @@ const Register = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-3 rounded w-25">
+      <div className="bg-white p-3 rounded w-50">
         <h2>Register</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="name">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
+            <label htmlFor="name" className="mr-3">
               <strong>Name</strong>
             </label>
             <input
@@ -54,7 +54,7 @@ const Register = () => {
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="email">
               <strong>Email</strong>
             </label>
@@ -68,7 +68,7 @@ const Register = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="password">
               <strong>Password</strong>
             </label>
@@ -82,7 +82,7 @@ const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="c-password">
               <strong>Confirm Password</strong>
             </label>
@@ -96,7 +96,7 @@ const Register = () => {
               onChange={(e) => setCPassword(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="house">
               <strong>House No.</strong>
             </label>
@@ -110,7 +110,7 @@ const Register = () => {
               onChange={(e) => setHouse(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="street">
               <strong>Street Name</strong>
             </label>
@@ -124,7 +124,7 @@ const Register = () => {
               onChange={(e) => setStreet(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="address">
               <strong>Address</strong>
             </label>
@@ -138,7 +138,7 @@ const Register = () => {
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="pincode">
               <strong>Pincode</strong>
             </label>
@@ -152,7 +152,7 @@ const Register = () => {
               onChange={(e) => setPincode(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-5 d-flex align-items-center justify-content-around">
             <label htmlFor="phone">
               <strong>Phone</strong>
             </label>
@@ -166,13 +166,13 @@ const Register = () => {
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
+          <button type="submit" className="btn btn-success w-50 rounded-0 d-flex align-items-center justify-content-around">
             Register
           </button>
         </form>
         <p>Already have an account</p>
         <Link to="myaccount/login">
-          <button className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
+          <button className="btn btn-default border w-50 bg-light rounded-0 text-decoration-none">
             Login
           </button>
         </Link>

@@ -20,11 +20,10 @@ import {
 
 import NavDropdown from "./NavDropdown";
 import NavNestedList from "./NavNestedList";
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 
 const Nav = () => {
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
+  
   const [menuIcon, setMenuIcon] = useState();
   const { total_item } = useCartContext();
   const drawerWidth = "40%";
@@ -178,10 +177,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <button onClick={() => loginWithRedirect()}>Login</button>
-       <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-      Log Out
-    </button>
+      
       {/* </Nav> */}
     </div>
   );

@@ -10,9 +10,12 @@ const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
 
   const { id, stock } = product;
-  const color = JSON.parse(product.color.replace(/'/g, '"'));
+  // const color = Array.isArray(product.color)
+  // ? JSON.parse(product.color[0].replace(/'/g, '"'))
+  // : JSON.parse(product.color.replace(/'/g, '"'));
 
-  const [selectedColor, setSelectedColor] = useState(color[0]);
+
+  // const [selectedColor, setSelectedColor] = useState(color[0]);
   const [amount, setAmount] = useState(1);
 
   const setDecrease = () => {
@@ -25,7 +28,7 @@ const AddToCart = ({ product }) => {
 
   return (
     <Wrapper>
-      <div className="colors">
+      {/* <div className="colors">
         <p>
           Color:
           {color &&
@@ -47,7 +50,7 @@ const AddToCart = ({ product }) => {
               );
             })}
         </p>
-      </div>
+      </div> */}
 
       {/* add to cart  */}
       <CartAmountToggle
@@ -58,7 +61,7 @@ const AddToCart = ({ product }) => {
 
       <NavLink
         to="/cart"
-        onClick={() => addToCart(id, selectedColor, amount, product)}
+        onClick={() => addToCart(id, amount, product)}
       >
         <Button className="btn">Add To Cart</Button>
       </NavLink>
