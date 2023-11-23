@@ -1,0 +1,34 @@
+.order-history-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .order-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .order-history-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .order-history-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .order-history-item-body {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  .order-history-item-image img {
+    max-width: 150px;
+    height: auto;
+  }

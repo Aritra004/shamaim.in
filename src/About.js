@@ -7,8 +7,9 @@ const About = () => {
     <>
       <div>
         <div className="aboutImg">
+          <img src="./images/banner1.2.png" alt="" className="about-banner" />
           <img
-            src="https://img1.wsimg.com/isteam/ip/ec776dac-2039-4268-a491-3b4263fb6a09/about%20us%202.png/:/cr=t:12.41%25,l:0%25,w:100%25,h:75.19%25/rs=w:388,h:292,cg:true/qt=q:69"
+            src="./images/about-us.jpg"
             alt=""
             className="about"
           />

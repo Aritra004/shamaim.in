@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useProductContext } from "./context/productcontex";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
@@ -15,6 +15,13 @@ import GoToTop from './components/GoToTop';
 const API = "http://127.0.0.1:8000/products/music-and-band";
 
 const SingleProduct = () => {
+  const history = useNavigate();
+
+  const handleBuyNow = () => {
+    localStorage.setItem("orderData", JSON.stringify(singleProduct));
+   
+  }
+
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
@@ -51,7 +58,7 @@ const SingleProduct = () => {
               <div className="product_images">
                 {/* <MyImage imgs={image} /> */}
                 <img
-                  src={image_1.url}
+                  src="https://th.bing.com/th/id/OIP.SFo6SieL22bbJzOSrY2_zQAAAA?pid=ImgDet&rs=1"
                   alt={image_1.filename}
                   style={{
                     objectFit: "cover",
@@ -97,15 +104,14 @@ const SingleProduct = () => {
                     Available:
                     <span> {stock > 0 ? "In Stock" : "Not Available"}</span>
                   </p>
-                  <p>
-                    ID : <span> {id} </span>
-                  </p>
+                  
                   <p>
                     Brand :<span> {company} </span>
                   </p>
                 </div>
                 <hr />
                 {stock > 0 && <AddToCart product={singleProduct} />}
+                <button className="btn" style={{marginLeft: "20px", backgroundColor:"red", color:"white", padding:"10px",paddingRight: "15px", paddingLeft:"15px"}} onClick={handleBuyNow}>Buy Now</button>
               </div>
             </div>
           </Container>

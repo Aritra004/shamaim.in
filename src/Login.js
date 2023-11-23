@@ -1,77 +1,69 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import {useNavigate} from "react-router-dom";
-
+import React from "react";
+import {
+  TextField,
+  Button,
+  Typography,
+  Grid,
+  Box,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+} from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const Login = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8000/login", {
-        email,
-        password,
-      })
-      .then((result) => {console.log(result)
-        if(result.data === "Success"){
-          navigate("/")
-        }
-      })
-      .catch((err) => console.log(err));
-  };
-
   return (
-    <div>
-      <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-3 rounded w-25">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email">
-              <strong>Email</strong>
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Enter Email"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password">
-              <strong>Password</strong>
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Set Password"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
-            Login
-          </button>
-        </form>
-        <p>Already have an account</p>
-        <Link to="myaccount/login">
-          <button className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-            Login
-          </button>
-        </Link>
-      </div>
-    </div>
-    </div>
-  )
-}
+    <Box padding={2}>
+      <Grid container borderRadius={3} overflow={"hidden"}>
+        <Grid item xs={12} sm={7} sx={{ backgroundColor: "blue" }}>
+          <img
+            src="https://www.hktechit.com/wp-content/uploads/2020/01/Custom-ECommerce-Website-Development-vector-image.png"
+            alt="login"
+            objectFit="cover"
+            style={{ maxWidth: "100%" }}
+          />
+        </Grid>
+        <Grid item xs={12} sm={5} sx={{ backgroundColor: "whitesmoke" }}>
+          <Box padding={2}>
+            <Typography variant="h4" gutterBottom textAlign={"center"}>
+              Sign-In to start shopping
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Password"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
 
-export default Login
+              <Grid item xs={6} textAlign={"end"}>
+                <Button variant="contained" color="error">
+                  Reset
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <Button variant="contained" color="success">
+                  Login
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
+
+export default Login;

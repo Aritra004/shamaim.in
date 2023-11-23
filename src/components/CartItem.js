@@ -19,9 +19,18 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
     <div className="cart_heading grid grid-five-column">
       <div className="cart-image--name">
         <div>
-          <figure>
-            <img src={image} alt={id} />
-          </figure>
+          {typeof image === "string" ? (
+            <figure>
+              <img src={image} alt={id} />
+            </figure>
+          ) : (
+            <figure>
+              <img
+                src="https://th.bing.com/th/id/OIP.SFo6SieL22bbJzOSrY2_zQAAAA?pid=ImgDet&rs=1"
+                alt={id}
+              />
+            </figure>
+          )}
         </div>
         <div>
           <p>{name}</p>
@@ -29,7 +38,8 @@ const CartItem = ({ id, name, image, color, price, amount }) => {
             <p>color:</p>
             <div
               className="color-style"
-              style={{ backgroundColor: color, color: color }}></div>
+              style={{ backgroundColor: color, color: color }}
+            ></div>
           </div>
         </div>
       </div>

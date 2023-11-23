@@ -19,6 +19,9 @@ const Home = () => {
     e.preventDefault();
     setShowForm(false);
     setShowModal(true);
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("address").value = "";
   };
 
   const Wrapper = styled.section`
@@ -35,19 +38,25 @@ const Home = () => {
           border: none;
           background-color: transparent;
           cursor: pointer;
+
+          img{
+            width: 60px;
+            height: 60px;
+          }
         }
 
         .form-container {
           position: fixed;
           bottom: 80px;
           right: 20px;
-          background-color: #fff;
+          background-color: black;
           padding: 20px;
           border: 1px solid #ccc;
 
           label {
             display: block;
             margin-bottom: 5px;
+            color: white;
           }
 
           input,
@@ -89,6 +98,7 @@ const Home = () => {
             padding: 20px;
             border-radius: 3px;
             text-align: center;
+            width: 60%;
 
             p {
               margin-bottom: 10px;
@@ -119,8 +129,8 @@ const Home = () => {
 
       <div className="home-page">
         <div className="button-container">
-          <button className="button-image" onClick={() => setShowForm(true)}>
-            <img src="button-image.png" alt="Button" />
+          <button className="button-image" onClick={() => setShowForm(!showForm)}>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Interactive_icon.svg/1200px-Interactive_icon.svg.png" alt="Button" />
           </button>
           {showForm && (
             <form className="form-container" onSubmit={handleSubmit}>

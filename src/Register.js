@@ -1,183 +1,141 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import React from "react";
+import {
+  TextField,
+  Button,
+  Typography,
+  Grid,
+  Box,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+} from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 const Register = () => {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [cPassword, setCPassword] = useState();
-  const [house, setHouse] = useState();
-  const [street, setStreet] = useState();
-  const [address, setAddress] = useState();
-  const [pincode, setPincode] = useState();
-  const [phone, setPhone] = useState();
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8000/register", {
-        name,
-        email,
-        password,
-        cPassword,
-        house,
-        street,
-        address,
-        pincode,
-        phone,
-      })
-      .then((result) => {console.log(result)
-        navigate("/myaccount/login")
-      })
-      .catch((err) => console.log(err));
-  };
-
   return (
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-3 rounded w-50">
-        <h2>Register</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="name" className="mr-3">
-              <strong>Name</strong>
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Enter Name"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="email">
-              <strong>Email</strong>
-            </label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Enter Email"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="password">
-              <strong>Password</strong>
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Set Password"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="c-password">
-              <strong>Confirm Password</strong>
-            </label>
-            <input
-              type="password"
-              name="c-password"
-              id="c-password"
-              placeholder="Confirm Password"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setCPassword(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="house">
-              <strong>House No.</strong>
-            </label>
-            <input
-              type="text"
-              name="house"
-              id="house"
-              placeholder="Your House/Floor No."
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setHouse(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="street">
-              <strong>Street Name</strong>
-            </label>
-            <input
-              type="text"
-              name="street"
-              id="street"
-              placeholder="Street Name."
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setStreet(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="address">
-              <strong>Address</strong>
-            </label>
-            <input
-              type="text"
-              name="address"
-              id="address"
-              placeholder="Rest of your address."
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setAddress(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="pincode">
-              <strong>Pincode</strong>
-            </label>
-            <input
-              type="number"
-              name="pincode"
-              id="pincode"
-              placeholder="Your Pincode"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setPincode(e.target.value)}
-            />
-          </div>
-          <div className="mb-5 d-flex align-items-center justify-content-around">
-            <label htmlFor="phone">
-              <strong>Phone</strong>
-            </label>
-            <input
-              type="number"
-              name="phone"
-              id="phone"
-              placeholder="Enter your Phone number"
-              autoComplete="off"
-              className="form-control rounded-0"
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-          <button type="submit" className="btn btn-success w-50 rounded-0 d-flex align-items-center justify-content-around">
-            Register
-          </button>
-        </form>
-        <p>Already have an account</p>
-        <Link to="myaccount/login">
-          <button className="btn btn-default border w-50 bg-light rounded-0 text-decoration-none">
-            Login
-          </button>
-        </Link>
-      </div>
-    </div>
+    <Box padding={2}>
+      <Grid container borderRadius={3} overflow={"hidden"}>
+        <Grid item xs={12} sm={7} sx={{ backgroundColor: "blue" }}>
+          <img
+            src="https://www.hktechit.com/wp-content/uploads/2020/01/Custom-ECommerce-Website-Development-vector-image.png"
+            alt="login"
+            objectFit="cover"
+            style={{ maxWidth: "100%" }}
+          />
+        </Grid>
+        <Grid item xs={12} sm={5} sx={{ backgroundColor: "whitesmoke" }}>
+          <Box padding={2}>
+            <Typography variant="h4" gutterBottom textAlign={"center"}>
+              Register Here
+            </Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  label="Name"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  sx={{ fontSize: 14 }}
+                  inputProps={{
+                    style: { textTransform: "none" },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <RadioGroup
+                  row
+                  sx={{ alignItems: "center" }}
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  defaultValue="female"
+                  name="radio-buttons-group"
+                >
+                  <Typography variant="h6" marginRight={2}>
+                    Gender
+                  </Typography>
+                  <FormControlLabel
+                    value="female"
+                    control={<Radio />}
+                    label="Female"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={<Radio />}
+                    label="Male"
+                  />
+                  <FormControlLabel
+                    value="other"
+                    control={<Radio />}
+                    label="Other"
+                  />
+                </RadioGroup>
+              </Grid>
+              <Grid item xs={12}>
+                <DatePicker
+                  label="Date of Birth"
+                  inputFormat="dd/MM/yyyy"
+                  size="small"
+                  slotProps={{
+                    textField: {
+                      size: "small",
+                      fullWidth: true,
+                      required: true,
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  multiline
+                  rows={4}
+                  label="Address"
+                  size="small"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="City"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="pincode"
+                  size="small"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={6} textAlign={"end"}>
+                <Button variant="contained" color="error">
+                  Reset
+                </Button>
+              </Grid>
+              <Grid item xs={6}>
+                <Button variant="contained" color="success">
+                  Register
+                </Button>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

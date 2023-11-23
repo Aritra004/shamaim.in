@@ -1,6 +1,6 @@
 .aboutImg {
   margin: auto;
-  width: 50%;
+  width: 100%;
   padding: 10px;
 }
 .about {
@@ -11,15 +11,23 @@
   width: 700px;
   height: 500px;
 }
+.about-banner{
+  width: 100%;
+  /* margin-left: 300px; */
+  margin-bottom: 10px;
+}
 
 /* Mobile-responsive styles */
 @media (max-width: 600px) {
   .aboutImg {
-    width: 60%; /* Reduce the width for smaller screens */
+    width: 100%; /* Reduce the width for smaller screens */
   }
 
   .about {
     width: 100%; /* Take up full width of the screen */
     height: auto; /* Let the height adjust according to the aspect ratio */
+  }
+  .about-banner{
+    width: 100%;
   }
 }
