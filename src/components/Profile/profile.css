@@ -1,0 +1,40 @@
+.profile {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .profile h2 {
+    text-align: center;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+  }
+  .p-detail {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .p-label {
+    font-weight: bold;
+    font-size: 20px;
+    width: 100px;
+  }
+  .p-value {
+    margin-left: 10px;
+    font-size: 20px;
+  }
+  .p-edit-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .p-edit-button:hover {
+    background-color: #0056b3;
+  }
